@@ -2,131 +2,389 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <meta name="description" content="موقع لحظات بتجربة بصرية ثلاثية الأبعاد، مسابقات، تصميمات وتعليقات.">
+
   <title>لحظات | تجربة تفاعلية</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
   <link rel="stylesheet" href="styles.css">
+
+  <!-- منع ظهور نافذة الصور عند تحميل الموقع -->
+  <style>
+    #image-modal[hidden] {
+      display: none !important;
+    }
+  </style>
 </head>
+
 <body>
+
+  <!-- شاشة البداية -->
   <div id="intro" class="intro" aria-hidden="true">
     <div class="intro-ring"></div>
     <p>أهلاً بك في لحظات</p>
   </div>
 
+
+  <!-- الهيدر -->
   <header class="site-header">
+
     <a class="brand" href="#home" aria-label="العودة للرئيسية">
       <span class="brand-mark" aria-hidden="true"></span>
       <span>لحظات</span>
     </a>
+
     <nav aria-label="التنقل الرئيسي">
       <a href="#moments">اللحظات</a>
       <a href="#contest">المسابقة</a>
       <a href="#designs">التصميم</a>
       <a href="#comments">التعليقات</a>
     </nav>
-    <a class="admin-link" href="admin.html">الإدارة</a>
+
+    <a class="admin-link" href="admin.html">
+      الإدارة
+    </a>
+
   </header>
 
+
+  <!-- المحتوى الرئيسي -->
   <main id="home">
+
+
+    <!-- HERO -->
     <section class="hero section">
+
       <div class="hero-copy">
-        <p class="eyebrow">مساحة تفاعلية للصور والتصميم</p>
-        <h1>كل لحظة لها مكانها.</h1>
-        <p class="hero-text">شاهد الصور، شارك في المسابقة، واستكشف التصميمات في تجربة هادئة تعتمد على الذهب والأسود.</p>
+
+        <p class="eyebrow">
+          مساحة تفاعلية للصور والتصميم
+        </p>
+
+        <h1>
+          كل لحظة لها مكانها.
+        </h1>
+
+        <p class="hero-text">
+          شاهد الصور، شارك في المسابقة، واستكشف التصميمات
+          في تجربة هادئة تعتمد على الذهب والأسود.
+        </p>
+
         <div class="actions">
-          <a class="button primary" href="#moments">استكشف اللحظات</a>
-          <a class="button secondary" href="#contest">ابدأ المسابقة</a>
+
+          <a class="button primary" href="#moments">
+            استكشف اللحظات
+          </a>
+
+          <a class="button secondary" href="#contest">
+            ابدأ المسابقة
+          </a>
+
         </div>
+
       </div>
+
+
+      <!-- العنصر ثلاثي الأبعاد -->
       <div class="hero-object" aria-hidden="true">
+
         <div class="ring ring-back"></div>
+
         <div class="ring ring-main"></div>
+
         <div class="ring ring-front"></div>
+
         <span class="hero-light"></span>
+
       </div>
+
     </section>
 
+
+
+    <!-- اللحظات -->
     <section id="moments" class="section">
+
       <div class="section-heading">
+
         <div>
-          <p class="eyebrow">01 / اللحظات</p>
-          <h2>صور تحفظ المشهد.</h2>
+
+          <p class="eyebrow">
+            01 / اللحظات
+          </p>
+
+          <h2>
+            صور تحفظ المشهد.
+          </h2>
+
         </div>
-        <p>مجموعة قابلة للتحديث من لوحة الإدارة. اضغط على أي صورة لعرضها بحجم أكبر.</p>
+
+        <p>
+          مجموعة قابلة للتحديث من لوحة الإدارة.
+          اضغط على أي صورة لعرضها بحجم أكبر.
+        </p>
+
       </div>
+
+
       <div id="moments-grid" class="moments-grid"></div>
+
     </section>
 
+
+
+    <!-- المسابقة -->
     <section id="contest" class="section contest-section">
+
       <div class="section-heading">
+
         <div>
-          <p class="eyebrow">02 / المسابقة</p>
-          <h2>اختبر ذاكرتك.</h2>
+
+          <p class="eyebrow">
+            02 / المسابقة
+          </p>
+
+          <h2>
+            اختبر ذاكرتك.
+          </h2>
+
         </div>
-        <p>سؤال واحد في كل مرة، والنتيجة تظهر مباشرة بعد اختيار الإجابة.</p>
+
+        <p>
+          سؤال واحد في كل مرة،
+          والنتيجة تظهر مباشرة بعد اختيار الإجابة.
+        </p>
+
       </div>
+
+
       <div class="contest-shell">
+
+
         <div class="vault" aria-hidden="true">
+
           <div class="vault-dial"></div>
+
           <div class="vault-line"></div>
+
         </div>
+
+
         <div class="quiz">
+
           <p id="question-count" class="small-label"></p>
-          <h3 id="question-text">جاري تحميل المسابقة...</h3>
+
+          <h3 id="question-text">
+            جاري تحميل المسابقة...
+          </h3>
+
           <div id="answers" class="answers"></div>
-          <p id="quiz-feedback" class="feedback" role="status"></p>
-          <button id="next-question" class="button primary hidden">السؤال التالي</button>
+
+          <p
+            id="quiz-feedback"
+            class="feedback"
+            role="status"
+          ></p>
+
+          <button
+            id="next-question"
+            class="button primary hidden"
+            type="button"
+          >
+            السؤال التالي
+          </button>
+
         </div>
+
       </div>
+
     </section>
 
+
+
+    <!-- التصميم -->
     <section id="designs" class="section">
+
       <div class="section-heading">
+
         <div>
-          <p class="eyebrow">03 / التصميم</p>
-          <h2>أعمال لها بصمة.</h2>
+
+          <p class="eyebrow">
+            03 / التصميم
+          </p>
+
+          <h2>
+            أعمال لها بصمة.
+          </h2>
+
         </div>
-        <p>معرض تصميمات يتحدث تلقائياً عند إضافة أعمال جديدة من الإدارة.</p>
+
+        <p>
+          معرض تصميمات يتحدث تلقائياً
+          عند إضافة أعمال جديدة من الإدارة.
+        </p>
+
       </div>
-      <div id="designs-grid" class="designs-grid"></div>
+
+
+      <div
+        id="designs-grid"
+        class="designs-grid"
+      ></div>
+
     </section>
 
+
+
+    <!-- التعليقات -->
     <section id="comments" class="section">
+
       <div class="section-heading">
+
         <div>
-          <p class="eyebrow">04 / التعليقات</p>
-          <h2>اترك أثرًا.</h2>
+
+          <p class="eyebrow">
+            04 / التعليقات
+          </p>
+
+          <h2>
+            اترك أثرًا.
+          </h2>
+
         </div>
-        <p>اكتب رأيك، وسيظهر في نفس المتصفح. يمكن للإدارة مراجعته وحذفه.</p>
+
+        <p>
+          اكتب رأيك، وسيظهر في نفس المتصفح.
+          يمكن للإدارة مراجعته وحذفه.
+        </p>
+
       </div>
+
+
       <div class="comments-layout">
-        <form id="comment-form" class="comment-form">
-          <label>الاسم<input id="comment-name" required maxlength="40" autocomplete="name"></label>
-          <label>التعليق<textarea id="comment-text" required maxlength="240"></textarea></label>
-          <button class="button primary" type="submit">نشر التعليق</button>
+
+
+        <form
+          id="comment-form"
+          class="comment-form"
+        >
+
+          <label>
+            الاسم
+
+            <input
+              id="comment-name"
+              required
+              maxlength="40"
+              autocomplete="name"
+            >
+
+          </label>
+
+
+          <label>
+            التعليق
+
+            <textarea
+              id="comment-text"
+              required
+              maxlength="240"
+            ></textarea>
+
+          </label>
+
+
+          <button
+            class="button primary"
+            type="submit"
+          >
+            نشر التعليق
+          </button>
+
         </form>
-        <div id="comments-list" class="comments-list"></div>
+
+
+        <div
+          id="comments-list"
+          class="comments-list"
+        ></div>
+
       </div>
+
     </section>
+
   </main>
 
+
+
+  <!-- الفوتر -->
   <footer class="site-footer">
-    <span>لحظات</span>
-    <span>تجربة رقمية مستقلة</span>
+
+    <span>
+      لحظات
+    </span>
+
+    <span>
+      تجربة رقمية مستقلة
+    </span>
+
   </footer>
 
-  <div id="image-modal" class="modal" hidden>
-    <button class="modal-close" aria-label="إغلاق">×</button>
+
+
+  <!-- نافذة عرض الصور -->
+  <!-- تبدأ مخفية تماماً -->
+  <div
+    id="image-modal"
+    class="modal"
+    hidden
+    aria-hidden="true"
+  >
+
+    <button
+      class="modal-close"
+      type="button"
+      aria-label="إغلاق"
+    >
+      ×
+    </button>
+
+
     <figure>
-      <img id="modal-image" alt="">
-      <figcaption id="modal-caption"></figcaption>
+
+      <img
+        id="modal-image"
+        src=""
+        alt=""
+      >
+
+      <figcaption
+        id="modal-caption"
+      ></figcaption>
+
     </figure>
+
   </div>
 
-  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.js"></script>
+
+
+  <!-- المكتبات -->
+  <script
+    src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.js"
+  ></script>
+
+
+  <!-- كود الموقع -->
   <script src="app.js"></script>
+
 </body>
 </html>
