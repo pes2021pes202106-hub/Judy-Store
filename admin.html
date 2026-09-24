@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>الإدارة | لحظات</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+<header class="admin-header">
+  <a href="index.html">لحظات</a>
+  <span>لوحة الإدارة</span>
+  <a href="index.html">عرض الموقع</a>
+</header>
+<main class="admin-main">
+  <section id="login" class="login">
+    <p class="eyebrow">الدخول</p>
+    <h1>لوحة الإدارة</h1>
+    <p>هذه الواجهة مخصصة لإدارة محتوى الموقع.</p>
+    <form id="login-form">
+      <label>كلمة المرور<input id="password" type="password" required autocomplete="current-password"></label>
+      <button class="button primary">دخول</button>
+      <p id="login-error" class="error"></p>
+    </form>
+  </section>
+
+  <section id="dashboard" hidden>
+    <div class="dashboard-head">
+      <div><p class="eyebrow">لوحة التحكم</p><h1>إدارة المحتوى</h1></div>
+      <button id="logout" class="button secondary">تسجيل الخروج</button>
+    </div>
+
+    <div class="tabs" role="tablist">
+      <button class="tab active" data-tab="moments">اللحظات</button>
+      <button class="tab" data-tab="designs">التصميم</button>
+      <button class="tab" data-tab="quiz">المسابقة</button>
+      <button class="tab" data-tab="comments">التعليقات</button>
+    </div>
+
+    <section id="tab-moments" class="panel">
+      <h2>إضافة لحظة</h2>
+      <form id="moment-form" class="form-grid">
+        <label>العنوان<input id="moment-title" required></label>
+        <label>الوصف<input id="moment-desc"></label>
+        <label>الصورة<input id="moment-file" type="file" accept="image/*" required></label>
+        <button class="button primary">إضافة الصورة</button>
+      </form>
+      <div id="admin-moments" class="admin-list"></div>
+    </section>
+
+    <section id="tab-designs" class="panel" hidden>
+      <h2>إضافة تصميم</h2>
+      <form id="design-form" class="form-grid">
+        <label>العنوان<input id="design-title" required></label>
+        <label>الوصف<input id="design-desc"></label>
+        <label>الصورة<input id="design-file" type="file" accept="image/*" required></label>
+        <button class="button primary">إضافة التصميم</button>
+      </form>
+      <div id="admin-designs" class="admin-list"></div>
+    </section>
+
+    <section id="tab-quiz" class="panel" hidden>
+      <h2>إدارة أسئلة المسابقة</h2>
+      <form id="quiz-form" class="form-grid">
+        <label>السؤال<input id="quiz-q" required></label>
+        <label>الإجابة الأولى<input id="q-a0" required></label>
+        <label>الإجابة الثانية<input id="q-a1" required></label>
+        <label>الإجابة الثالثة<input id="q-a2" required></label>
+        <label>الإجابة الرابعة<input id="q-a3" required></label>
+        <label>رقم الإجابة الصحيحة<input id="q-correct" type="number" min="1" max="4" value="1" required></label>
+        <button class="button primary">إضافة السؤال</button>
+      </form>
+      <div id="admin-quiz" class="admin-list"></div>
+    </section>
+
+    <section id="tab-comments" class="panel" hidden>
+      <h2>التعليقات</h2>
+      <div id="admin-comments" class="admin-list"></div>
+    </section>
+  </section>
+</main>
+<script src="admin.js"></script>
+</body>
+</html>
